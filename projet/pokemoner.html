@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Trip in Shanghai | Pokémon Go 2</title>
+		
+		<!-- boostrap CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+			<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Bungee+Shade|Cairo|Comfortaa|Mada|Monoton|Righteous|Sigmar+One" rel="stylesheet">
+			<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+			<link rel="stylesheet" type="text/css" href="css/draw.css">
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body id="home" data-spy="scroll" data-target=".nabar" data-offest="100">
+		
+		<!-- navbar -->
+		<nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+					</li>					
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#about">About</a> 
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#pokemon">Pokémoner</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="schedule.html">Schedule</a>
+					</li>
+				</ul>
+				<a class="navbar-brand pull-sm-right m-r-0 hidden-xs-down welcome" data-toggle="modal" href="#register">Welcome Ash Ketchum :)</a>
+			</div>
+		</nav><!-- /navbar -->
+
+		<!-- jumbotron -->
+		<div class="jumbotron jumbotron-fluid bg-info">
+			<div class="container text-sm-center p-t-3">
+				<h1 class="display-2">Bonjour Shanghai</h1>
+				<p class="lead">This is a Magic City for <strong> Pokémon Go 2 </strong> in the east of China</p>
+				
+				<div class="btn-group m-t-2" role="group" aria-label="Basic example">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register"> Begin your trip </button>
+					<a class="btn btn-secondary btn-lg" href="schedule.html">Catch Pokémon</a>
+				</div>
+			</div>
+		</div>	
+		<!-- /jumbotron -->
+
+
+		<div class="container p-t-2">
+
+			<div class="row">
+				
+				<img src="images/profile.png" alt="Photo profile" class="profile-photo" style="margin-top: 50px;">
+
+				<div class="ash col-lg-6">
+					<h3 style="margin-top: 50px; margin-bottom: 30px; text-align: center; border-left: 200px solid #E2F4FF; border-right: 200px solid #E2F4FF;">Profile</h3>
+					<ul class="profile">
+						<li class="name"><strong>Name: </strong> Ash Ketchum</li>
+						<li class=""><strong>Name-JP: </strong> サトシ Satoshi</li>
+						<li class="age"><strong>Age: </strong> 10 years old</li>
+						<li class="sex"><strong>Gender: </strong> Male</li>
+						<li class="homeTown"><strong>Home Town: </strong> Pallet Town</li>
+						<li class="Region"><strong>Region: </strong> Kanto</li>
+						<li class="pro"><strong>Class: </strong> Trainer</li>
+						<li class="onHand"><strong>On Hand: </strong> Pikachu, Rowlet</li>
+						<li class=""><strong>In Storage: </strong> Bulbasur, Charizard, Snoriax, Sceptile, Quillava</li>
+					</ul>
+					<h3 style="margin-top: 50px; margin-bottom: 30px; text-align: center; border-left: 200px solid #E2F4FF; border-right: 200px solid #E2F4FF;">About</h3>
+					<p> <strong>Ash Ketchum</strong> at some point in his early life, Ash went on a field trip in a rainy forest and got lost. Scared to the point of tears, he was forced to hide in a hollow tree trunk. Eventually, a group of local Pokémon joined him and cheered him up, which was partially what motivated him to become a Pokémon Trainer.</p>
+					<p> Ash also enrolled in Professor Oak's Pokémon Summer Camp when he was young. One day, another camper named Serena got lost in the forest and wounded her leg after getting startled by a Poliwag. Ash, who was looking for the Poliwag, came to her rescue and wrapped a handkerchief around the wounded knee to brace it. He then helped her up and guided her out of the forest.</p>
+					
+					<h3 style="margin-top: 50px; margin-bottom: 30px; text-align: center; border-left: 200px solid #E2F4FF; border-right: 200px solid #E2F4FF;">Girl Friend</h3>
+					<img class="m-b-1 img-fluid img-rounded hidden-xs-down" src="images/025.png" alt="Pikachu">
+
+				</div>
+				
+				<div class="draw col-lg-offset-1 col-lg-4">
+					<h3 style="text-align: center; margin-top: 50px; border-left: 20px solid #094070; border-right: 20px solid #094070;">Create your Pokémon</h3>
+					<canvas	width="350" height="380"></canvas>
+					<div class="controls">
+						<ul>
+							<li class="red selected"></li>
+							<li class="blue"></li>
+							<li class="yellow"></li>
+						</ul>
+						<button id="revealColorSelect">New Color</button>
+						<div id="colorSelect">
+							<span id="newColor"></span>
+							<div class="sliders">
+								<p>
+									<label for="red">Red</label>
+									<input id="red" name="red" type="range" min=0 max=255 value=0>
+								</p>
+								<p>
+									<label for="green">Green</label>
+									<input id="green" name="green" type="range" min=0 max=255 value=0>
+								</p>
+								<p>
+									<label for="blue">Blue</label>
+									<input id="blue" name="blue" type="range" min=0 max=255 value=0>
+								</p>
+							</div>
+							<div>
+								<button id="addNewColor">Add Color</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+		
+
+			<!-- signup form -->
+			<hr>
+				<div class="row p-y-2 text-muted">
+					<div class="col-md-6 col-xl-5">
+						<p><strong>About Pokémon-Trip in Shanghai</strong></p>
+						<p>This is a special trip in Shanghai, for the foreigners who want to catch the Pokémon with Pokémon Go 2 and visit all the fantanstic places in Shanghai.</p>
+					</div>
+				  <div class="col-md-6 col-xl-5 col-xl-offset-2">
+				  	<p><strong>Stay up-to-date on Pokémon-Trip in Shanghai</strong></p>
+				    <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Email">
+				      <span class="input-group-btn">
+				        <button class="btn btn-primary" type="button">Subscribe</button>
+				      </span>
+				    </div>
+				  </div>
+				</div>
+			<hr>
+			<!-- /signup form -->
+
+			<!-- footer -->
+			<div class="row p-y-1">
+				<div class="col-md-7">
+					<ul class="nav nav-inline">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Community</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://hwwn.github.io/Haowen/about/">About us</a>
+						</li>
+						<li class="nav-item">
+
+							<!-- Split button -->
+							<div class="btn-group dropup">
+								<button type="button" class="btn btn-secondary">Other Confs</button>
+								<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="sr-only">Toggle Dropdown</span>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="http://www.pokemongo.com/">Pokémon Go</a>
+									<a class="dropdown-item" href="http://www.pokemon.com/us/">Pokémon.com/us</a>
+									<a class="dropdown-item" href="http://www.pokemon.com/hk/">Pokémon.com/zh</a>
+									<a class="dropdown-item" href="http://www.pokemon.com/fr/">Pokémon.com/fr</a>
+								</div>
+							</div>
+							<!-- /Split button -->
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-5 text-md-right">
+					<small>&copy; 2016 created by <a href="https://hwwn.github.io/Haowen/"> Haowen LIU </a>from <a href="https://hwwn.github.io/Haowen/">hwwn.github.io/Haowen</a></small>
+				</div>
+			</div>
+			<!-- /footer -->
+		
+		</div>
+		<!-- /.container -->
+
+			<!--===================================
+	      		FORM MODAL
+	   		====================================-->
+			
+			<div id="register" class="modal fade">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header bg-info">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title">Pay for your trip</h4>
+						</div>
+						<div class="modal-body">
+
+							<!-- registration form -->					
+							
+							<form>
+								<h5 class="m-b-2">Basic Info</h5>
+								<fieldset class="form-group">
+									<label for="name">Name:</label>
+									<input type="text" class="form-control" id="name">
+								</fieldset>
+								<fieldset class="form-group has-danger">
+									<label for="mail" class="form-control-label p-l-0">Email:</label>
+									<input type="email" class="form-control form-control-danger" id="mail">
+								</fieldset>
+
+								<hr class="m-y-2">
+								<h5 class="m-b-2">Game Question</h5>
+								<div class="alert alert-warning alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<strong>Quick!</strong> Find the correct answer below and win <strong>50% OFF</strong> for your trip
+								</div>	
+
+								<fieldset class="form-group">
+									<label for="role">Which one is correct?</label>
+									<select class="c-select form-control" id="role" name="user_role">
+										<option value="full stack js developer">I like HTML5</option>
+										<option value="front end developer">I like CSS 3</option>
+										<option value="back end developer">I like Javascript</option>
+										<option value="designer">I like Bootstrap 4</option>          
+										<option value="student">I like Pokémon ;) </option> 
+									</select>
+								</fieldset>
+								
+								<hr class="m-y-2">
+								<h5 class="m-b-2">Which Topics Interest You Most?</h5>
+								
+								<div class="form-group c-inputs-stacked">
+									<label class="c-input c-checkbox">
+										<input type="checkbox">
+										<span class="c-indicator"></span>
+										Pokémon
+									</label>
+									<label class="c-input c-checkbox">
+										<input type="checkbox">
+										<span class="c-indicator"></span>
+										Pokémon Go 2
+									</label>
+									<label class="c-input c-checkbox">
+										<input type="checkbox">
+										<span class="c-indicator"></span>
+										Shanghai
+									</label>	
+									<label class="c-input c-checkbox">
+										<input type="checkbox">
+										<span class="c-indicator"></span>
+										Trip in China
+									</label>
+									<label class="c-input c-checkbox">
+										<input type="checkbox">
+										<span class="c-indicator"></span>
+										Other
+									</label>								
+								</div>						
+								
+								
+								<hr class="m-b-2">
+								<h5 class="m-b-2">Payment Info</h5>
+								
+								<div class="row">
+									<div class="col-lg-6 form-group has-success">
+										<label class="form-control-label p-l-0" for="cc-num">Card Number:</label>
+										<input class="form-control form-control-success" id="cc-num" type="text">
+									</div>
+								
+									<div class="col-lg-3 form-group">
+										<label for="zip">Zip Code:</label>
+										<input class="form-control" id="zip" type="text">
+									</div>
+								
+									<div class="col-lg-3 form-group">
+										<label for="cvv">CVV:</label>
+										<input class="form-control" id="cvv" type="text">
+									</div>
+								</div>
+								
+								<div class="row">
+									<label class="col-lg-12">Expiration Date:</label>
+									
+									<div class="col-lg-8 form-group"> 									
+										<select class="c-select form-control" id="exp-month">
+											<option value="1">1 - January</option>
+											<option value="2">2 - February</option>
+											<option value="3">3 - March</option>
+											<option value="4">4 - April</option>
+											<option value="5">5 - May</option>
+											<option value="6">6 - June</option>
+											<option value="7">7 - July</option>
+											<option value="8">8 - August</option>
+											<option value="9">9 - September</option>
+											<option value="10">10 - October</option>
+											<option value="11">11 - November</option>	
+											<option value="12">12 - December</option>          		          
+										</select> 								
+									</div>
+									<div class="col-lg-4 form-group">
+										<select class="c-select form-control" id="exp-year">
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>        		          
+										</select>								
+									</div>								
+								</div>
+								
+								<hr class="m-b-2">
+								<button type="submit" class="btn btn-primary btn-lg">Register</button>
+								
+							</form><!-- /registration form -->						
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->		
+
+		 <!-- jQuery first, then bootstrap js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+		<script src="js/draw.js" type="text/javascript" charset="utf-8"></script>	
+	</body>
+
+</html>

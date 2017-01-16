@@ -1,0 +1,122 @@
+/*****************************
+	Heading
+******************************/
+.nav-item{
+	font-family: 'Righteous', cursive;
+}
+
+.navbar .navbar-brand {
+	color: rgba(255, 255, 255, .85);
+	font-size: 1rem;
+	padding-top: .45rem;
+}
+
+.jumbotron {
+	background: url('../images/navBackground.jpg');
+	background-size: cover;
+}
+
+.btn,
+.active {
+	transition: .4s;
+}
+
+.display-2 {
+	font-family: 'Monoton', cursive;
+}
+
+
+/*****************************
+	Page About
+******************************/
+#about img {
+	height: 170px;
+}
+
+.list-group a:nth-child(5) {
+  background: #0C609C;
+  color: white;
+} 
+
+.PinS {
+	text-align: center;
+}
+
+.week {
+	text-align: right;
+}
+
+
+
+/*****************************
+	Page Pokémoner
+******************************/
+.profile-photo {
+	clear: both;
+	display: block;
+	max-height: 200px;
+	margin: 0 auto 30px;
+	border-radius: 10px;
+	border-left: 150px solid #1D85CE;
+	border-right: 150px solid #1D85CE;
+}
+
+
+
+/*****************************
+	Page Pokémoner
+******************************/
+
+
+
+
+/*****************************
+	Font
+******************************/
+h1,
+h2,
+h3,
+h4,
+small {
+	font-family: 'Righteous', cursive;
+}
+
+h3 {
+	color: #0C609C;
+}
+
+p,
+ul,
+.list-group,
+.welcome {
+	font-family: 'Mada', sans-serif;
+}
+
+.profile{
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.9em;
+}
+
+#about:first-child{
+	text-align: left;
+}
+
+#about:last-child{
+	text-align: right;
+}
+
+
+
+/*****************************
+	Responsive
+******************************/
+@media(max-width: 768px) {
+	h1 {
+		font-size: 45px;
+	}
+
+}
+
